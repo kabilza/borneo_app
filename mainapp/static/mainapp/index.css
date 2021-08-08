@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.card_menu_bar {
+    border-radius: 12px;
+    box-shadow: 8px 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.main_content {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 60vh;
+    background-color: white;
+}
+
+.menu_bar {
+    background-color: crimson;
+    display: flex;
+    justify-content: center;
+}
+
+.menu_bar .menu_bar_column {
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    justify-content: space-between;
+}
+
+.menu_bar .menu_bar_column .row {
+    border: 10px;
+    border-radius: 6px;
+    background-color: brown;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.menu_bar .menu_bar_column .row h1 {
+    font-size: medium;
+    color: white;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.regis_menu {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: coral;
+}
+
+.regis_menu .regis_menu_item {
+    border: 10px;
+    border-radius: 6px;
+    background-color: rgb(199, 98, 4);
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.regis_menu .regis_menu_item i{
+    padding-top: 30px;
+    padding-left: 0px;
+    padding-right: 35px;
+    font-size: 35px;
+    color: white;
+}
+
+.regis_menu .regis_menu_item h1{
+    font-size: medium;
+    color: white;
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.regis_menu .user_profile i {
+    font-size: 70px;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.regis_menu .user_profile {
+    border: 10px;
+    border-radius: 6px;
+    background-color: rgb(168, 124, 82);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.regis_menu .user_profile h1{
+    font-size: medium;
+    color: white;
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+}

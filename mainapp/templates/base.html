@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" /> 
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mainapp/bootstrap.min.css' %}">    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>    
+</head>
+    <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"" style=" background-color: rgba(0,0,0,0.6); backdrop-filter: blur(8px)">
+        <a href="#" class="navbar-brand">
+        <!-- Logo Image -->
+        <img src="https://www.borneothai.com/wp-content/uploads/2019/12/logo.png" 
+        width=100 class="d-inline-block align-middle mr-2" >
+        <!-- Logo Text -->
+        <span class="text font-weight-bold">Borneo Battery Registration Website</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    </body>
+    </html>
