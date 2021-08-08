@@ -27,6 +27,7 @@
     background-color: crimson;
     display: flex;
     justify-content: center;
+    height: 90px;
 }
 
 .menu_bar .menu_bar_column {
@@ -43,7 +44,7 @@
     padding: 10px;
     margin: 10px;
     width: 300px;
-    height: 100px;
+    height: 72px;
     display: flex;
     justify-content: center;
 }
@@ -99,7 +100,7 @@
     border: 10px;
     border-radius: 6px;
     background-color: rgb(168, 124, 82);
-    margin: 20px;
+    margin: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
