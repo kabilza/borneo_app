@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+
+.main_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: 
+    /* top, transparent red */
+    linear-gradient(
+        rgba(70, 66, 66, 0.45), 
+      rgba(70, 66, 66, 0.45)
+    ),
+    /* your image */
+    url("https://farm3.staticflickr.com/2862/10936924134_24ce77ae37_b.jpg");
+}
+
+.col .row h1{
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    font-size: 500%;
+}
+
+.col .row p{
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    font-size: 300%;
+}
