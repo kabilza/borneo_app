@@ -1,31 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
+{% extends "base.html" %}
+
+{% block navmenu %}
+{% endblock %}
+
+
+
+{% block content %}
+
+{% load static %}
     <link rel="stylesheet" href="{% static 'mainapp/welcome.css' %}">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> 
-    <title>Battery Registration - Index</title>
-</head>
-<body>
+
     <div class="main_content">
-        <div class="col">
-            <div class="row">
-                <h1>Welcome</h1>
-            </div>
+        <div class="messages">
+            <h1>Welcome to Borneo Battery Registeration Website</h1>
+            <br>
+            <p>Please login or register to continue</p>
         </div>
-        <div class="col">
-            <div class="row">
-                <p>Please register or login to continue</p>
+        <div class="buttons-holder">
+            <div class="indivbuttons card_menu_bar">
+                <i class='bx bx-user' ></i>
+                <h1>
+                    <br>ล็อกอิน
+                    <br>Login</h1>
+            </div>
+            <div class="indivbuttons card_menu_bar">
+                <i class='bx bxs-user-plus'></i>
+                <h1>
+                    <br>ลงทะเบียน
+                    <br>Register</h1>
             </div>
         </div>
     </div>
-    
-</body>
-</html>
 
-
-
+{% endblock %}
 
