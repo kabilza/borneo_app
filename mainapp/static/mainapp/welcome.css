@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+.main_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: 
+    /* top, transparent red */
+    linear-gradient(
+        rgba(70, 66, 66, 0.45), 
+      rgba(70, 66, 66, 0.45)
+    ),
+    /* your image */
+    url("https://farm3.staticflickr.com/2862/10936924134_24ce77ae37_b.jpg");
+}
+
+.regis_menu {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: coral;
+}
+
+.card_menu_bar {
+    border-radius: 12px;
+    box-shadow: 8px 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.buttons-holder .indivbuttons {
+    box-sizing: border-box;
+    padding: 20px;
+    border: 10px;
+    border-radius: 6px;
+    background-color: rgb(168, 124, 82);
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 110px;
+    width: 250px;
+}
+
+.buttons-holder .indivbuttons i {
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    font-size: 70px;
+    color: white;
+    text-align: center;
+    padding-top: -10px;
+}
+
+.buttons-holder .indivbuttons h1{
+    font-size: 25px;
+    align-self: center;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+}
+
+.messages h1 {
+    font-size: 70px;
+    font-weight: 600;
+    color: whitesmoke;
+}
+
+
+.messages p {
+    font-size: 40px;
+    font-weight: 450;
+    color: whitesmoke;
+}
+
+.buttons-holder {
+    display: flex;
+    flex-direction: row;
+}
