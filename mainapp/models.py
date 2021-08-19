@@ -16,6 +16,9 @@ class Profile(models.Model):
     home_province = models.TextField('Home Province', default="NOT SET")
     home_district = models.TextField('Home District', default="NOT SET")
 
+    def __str__(self):
+        return f"{self.user.first_name} {self.user.last_name}"
+
     def get_name(self):
         return f"{self.user.first_name} {self.user.last_name}"
 
@@ -37,3 +40,6 @@ class BatteryWarranty(models.Model):
     shop_province = models.TextField('Shop Province', default="NOT SET")
     shop_district = models.TextField('Shop District', default="NOT SET")
     shop_phonenumber = models.TextField('Shop Phone Number', default="NOT SET")
+
+    def __str__(self):
+        return f"{self.profile.user.first_name} {self.profile.user.last_name}"

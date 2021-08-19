@@ -20,8 +20,8 @@
             <div class="user_profile card_menu_bar">
                 <i class='bx bxs-user-circle' ></i>
                 <h1>
-                    <br>ยินดีต้อนรับ คุณ
-                    <br>Welcome, user </h1>
+                    <br>ยินดีต้อนรับ คุณ {{ user.get_short_name }}
+                    <br>Welcome, user {{ user.get_short_name }} </h1>
             </div>
 
             <div class="regis_menu_item card_menu_bar">
