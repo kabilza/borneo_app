@@ -35,18 +35,20 @@
 
     <div class="menu_bar">
         <div class="menu_bar_column">
-            <div class="row card">
-                <a href="/how_to_use">
-                <h1><i class='bx bx-question-mark'></i>
-                <br>วิธีการใช้งาน
-                <br>How to use</h1>
-                </a>
-            </div>
-            <div class="row card">
-                <h1><i class='bx bx-check-square' ></i>
-                <br>เงื่อนไขการรับประกัน
-                <br>Warranty Conditions</h1>
-            </div>
+            <a class='button' href="{% url 'warranty_con' %}">
+                <div class="row card">
+                    <h1><i class='bx bx-question-mark'></i>
+                    <br>วิธีการใช้งาน
+                    <br>How to use</h1>
+                </div>
+            </a>
+            <a class='button' href="{% url 'warranty_con' %}">
+                <div class="row card">
+                    <h1><i class='bx bx-check-square' ></i>
+                    <br>เงื่อนไขการรับประกัน
+                    <br>Warranty Conditions</h1>
+                </div>
+            </a>
             <div class="row card">
                 <h1><i class='bx bxs-location-plus' ></i>
                 <br>จุดบริการ
