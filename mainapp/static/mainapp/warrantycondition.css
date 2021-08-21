@@ -27,6 +27,32 @@ a {
     url("https://farm3.staticflickr.com/2862/10936924134_24ce77ae37_b.jpg");
 }
 
+i {
+    font-size: 70px;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+h1 {
+    font-size: large;
+    color: white;
+    text-align: center;
+}
+
+.row_message {
+    border: 10px;
+    border-radius: 6px;
+    background-color: brown;
+    padding: 10px;
+    margin: 10px;
+    width: 450px;
+    height: 150px;
+    align-self: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
 .regis_menu {
     display: flex;
     flex-direction: column;
@@ -51,6 +77,11 @@ a {
     justify-content: center;
     height: 110px;
     width: 250px;
+}
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
 }
 
 .buttons-holder a:hover .indivbuttons {
