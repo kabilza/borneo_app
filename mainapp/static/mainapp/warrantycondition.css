@@ -17,14 +17,6 @@ a {
     justify-content: center;
     width: 100vw;
     height: 92.5vh;
-    background-image: 
-    /* top, transparent red */
-    linear-gradient(
-        rgba(70, 66, 66, 0.45), 
-      rgba(70, 66, 66, 0.45)
-    ),
-    /* your image */
-    url("https://farm3.staticflickr.com/2862/10936924134_24ce77ae37_b.jpg");
 }
 
 i {

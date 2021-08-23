@@ -9,6 +9,29 @@ a {
     color: white;
 }
 
+.main_content .messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+}
+
+.main_content .messages h1 {
+    font-size: 70px;
+    font-weight: 600;
+    color: whitesmoke;
+    text-align: center
+}
+
+.main_content p {
+    font-size: 40px;
+    font-weight: 450;
+    color: whitesmoke;
+    text-align: center
+}
+
+
 .card_menu_bar {
     border-radius: 12px;
     box-shadow: 8px 8px 32px rgba(0, 0, 0, 0.25);
@@ -21,14 +44,6 @@ a {
     justify-content: center;
     width: 100vw;
     height: 92.5vh;
-    background-image: 
-    /* top, transparent red */
-    linear-gradient(
-        rgba(70, 66, 66, 0.45), 
-      rgba(70, 66, 66, 0.45)
-    ),
-    /* your image */
-    url("https://farm3.staticflickr.com/2862/10936924134_24ce77ae37_b.jpg");
 }
 
 .form_control {
@@ -48,10 +63,46 @@ td {
     padding-right: 25px;
     padding-left: 25px;
     padding-bottom: 20px;
+    color: whitesmoke;
 }
 
 input {
     border: 20px;
     border-radius: 6px;
     color: teal;
+}
+
+@media screen and (max-width:676px) {
+    .main_content .messages h1 {
+        font-size: 35px;
+        font-weight: 600;
+        color: whitesmoke;
+        text-align: center
+    }
+    
+    .main_content p {
+        font-size: 20px;
+        font-weight: 450;
+        color: whitesmoke;
+        text-align: center
+    }
+
+    .form_control {
+        border: 10px;
+        border-radius: 6px;
+        background-color: rgb(199, 98, 4);
+        padding: 20px;
+        margin: 20px;
+        display: flex;
+    }
+
+    td {
+        font-weight: 100;
+        font-size: 15px;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-bottom: 10px;
+        color: whitesmoke;
+    }
+    
 }

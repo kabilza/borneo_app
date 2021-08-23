@@ -9,7 +9,16 @@
     <link rel="stylesheet" href="{% static 'mainapp/login.css' %}">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> 
 
-    <div class="main_content">
+    <div class="main_content"  style='background-image: 
+    linear-gradient(
+        rgba(70, 66, 66, 0.45), 
+      rgba(70, 66, 66, 0.45)
+    ),
+    url("{% static 'mainapp/images/bokeh-dots-green-4.png' %}");'>
+        <div class="messages">
+            <h1>Login</h1>
+        </div>
+
         {% if form.errors %}
             <p>Your username and password didn't match. Please try again.</p>
         {% endif %}
