@@ -30,16 +30,16 @@ class Profile(models.Model):
 
 class BatteryWarranty(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
-    barcode = models.TextField('Barcode', default="NOT SET")
-    brand = models.TextField('Battery Brand', default="NOT SET")
-    battery_type = models.TextField('Battery Type', default="NOT SET")
-    battery_model = models.TextField('Battery Model', default="NOT SET")
-    warranty_period = models.TextField('Warranty Period', default="NOT SET")
+    barcode = models.CharField('Barcode', default="NOT SET", max_length=13)
+    brand = models.CharField('Battery Brand', default="NOT SET", max_length=20)
+    battery_type = models.CharField('Battery Type', default="NOT SET", max_length=20)
+    battery_model = models.CharField('Battery Model', default="NOT SET", max_length=20)
+    warranty_period = models.CharField('Warranty Period', default="NOT SET", max_length=20)
     date_installed = models.DateTimeField()
     shop_name = models.TextField('Shop Name', default="NOT SET")
-    shop_province = models.TextField('Shop Province', default="NOT SET")
-    shop_district = models.TextField('Shop District', default="NOT SET")
-    shop_phonenumber = models.TextField('Shop Phone Number', default="NOT SET")
+    shop_province = models.CharField('Shop Province', default="NOT SET", max_length=20)
+    shop_district = models.CharField('Shop District', default="NOT SET", max_length=20)
+    shop_phonenumber = models.CharField('Shop Phone Number', default="NOT SET", max_length=11)
 
     def __str__(self):
         return f"{self.profile.user.first_name} {self.profile.user.last_name}"
