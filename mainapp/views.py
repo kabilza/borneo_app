@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from django.contrib.auth.forms import UserCreationForm
 
 @login_required
 def index(request):
@@ -16,3 +17,14 @@ def welcome(request):
 
 def warranty_con(request):
     return render(request, 'mainapp/warrantycondition.html')
+
+def signup_view(request):
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+        form.save()
+        username = form.cleaned_data.get('username')
+        password = form.cleaned_data.get('password1')
+        user = authenticate(username=username, password=password)
+        login(request, user)
+        return HttpResponseRedirect(reverse('index'))
+    return render(request, 'registration/signup.html', context = {'form': form })
