@@ -19,18 +19,27 @@
     <link rel="stylesheet" href="{% static 'mainapp/battery-register.css' %}">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> 
 
-    <div class="main_content1">
+    <div class="main_content1" style='background-image: 
+    linear-gradient(
+        rgba(70, 66, 66, 0.45), 
+      rgba(70, 66, 66, 0.45)
+    ),
+    url("{% static 'mainapp/images/bokeh-dots-green-4.png' %}");'>
         <div class="container-md">
-            <form action="" method="POST">
-                <div class="row">
-                    <div class="col-9">
-                      {{ form.barcode|as_crispy_field }}
-                    </div>
-                    <div class="col-9">
-                      {{ form.brand|as_crispy_field }}
-                    </div>
-                  </div>
-            </form>
+            <div class="card">
+                <div class="card-body">
+                    <form action="" method="POST">
+                        <div class="row">
+                            <div class="col-9">
+                              {{ form.barcode|as_crispy_field }}
+                            </div>
+                            <div class="col-9">
+                              {{ form.brand|as_crispy_field }}
+                            </div>
+                          </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 

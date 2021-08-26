@@ -15,11 +15,7 @@ a.button:hover {
 .card {
     border-radius: 12px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-}
-
-.card_menu_bar {
-    border-radius: 12px;
-    box-shadow: 8px 8px 32px rgba(0, 0, 0, 0.25);
+    margin-bottom: 80px;
 }
 
 .main_content1 {
@@ -39,15 +35,16 @@ a.button:hover {
     overflow-x: hidden;
     width: 75vw;
     padding-top: 85px;
-    background-color: blueviolet;
+    background-color: rgb(157, 152, 161);
     position: static;
 }
 
-form {
+form .row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-self: center;
+    width: 500px;
 }
 
 
@@ -203,6 +200,16 @@ form {
     padding-bottom: 1rem;
 }
 
+.card-body {
+    display: flex;
+    justify-content: center;
+}
+
+.card_menu_bar {
+    border-radius: 12px;
+    box-shadow: 8px 8px 32px rgba(0, 0, 0, 0.25);
+}
+
 @media screen and (max-height: 900px) {
     .container-md {
         display: flex;
@@ -240,5 +247,11 @@ form {
         justify-content: center;
         height: 90px;
         width: 100vw;
+    }
+
+    .card-body {
+        padding-top: 50px;
+        display: flex;
+        justify-content: center;
     }
 }
