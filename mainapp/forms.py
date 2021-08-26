@@ -7,4 +7,4 @@ from .models import BatteryWarranty, Profile
 class BatteryRegistrationForm(ModelForm):
     class Meta:
         model = BatteryWarranty
-        fields = ('username', 'password1', 'password2')
+        exclude = ['profile']
