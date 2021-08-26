@@ -36,7 +36,7 @@ class BatteryWarranty(models.Model):
     battery_model = models.CharField('Battery Model', default="NOT SET", max_length=20)
     warranty_period = models.CharField('Warranty Period', default="NOT SET", max_length=20)
     date_installed = models.DateTimeField()
-    shop_name = models.TextField('Shop Name', default="NOT SET")
+    shop_name = models.CharField('Shop Name', default="NOT SET", max_length=50)
     shop_province = models.CharField('Shop Province', default="NOT SET", max_length=20)
     shop_district = models.CharField('Shop District', default="NOT SET", max_length=20)
     shop_phonenumber = models.CharField('Shop Phone Number', default="NOT SET", max_length=11)

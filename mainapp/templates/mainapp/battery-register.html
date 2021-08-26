@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{%load crispy_forms_tags %} 
+
+{% block navmenu %}
+<li class="nav-item active">
+    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+  </li>
+    {% if user.is_authenticated %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    </li>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+    <link rel="stylesheet" href="{% static 'mainapp/battery-register.css' %}">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> 
+
+    <div class="main_content1">
+        <div class="container-md">
+            <form action="" method="POST">
+                <div class="row">
+                    <div class="col-9">
+                      {{ form.barcode|as_crispy_field }}
+                    </div>
+                    <div class="col-9">
+                      {{ form.brand|as_crispy_field }}
+                    </div>
+                  </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="menu_bar">
+        <div class="menu_bar_column">
+            <a class='button' href="{% url 'warranty_con' %}">
+                <div class="row card">
+                    <h1><i class='bx bx-question-mark'></i>
+                    <br>วิธีการใช้งาน
+                    <br>How to use</h1>
+                </div>
+            </a>
+            <a class='button' href="{% url 'warranty_con' %}">
+                <div class="row card">
+                    <h1><i class='bx bx-check-square' ></i>
+                    <br>เงื่อนไขการรับประกัน
+                    <br>Warranty Conditions</h1>
+                </div>
+            </a>
+            <a class='button' href="{% url 'warranty_con' %}">
+            <div class="row card">
+                <h1><i class='bx bxs-location-plus' ></i>
+                <br>จุดบริการ
+                <br>Service Locations</h1>
+            </div>
+            </a>
+        </div>
+    </div>
+
+{% endblock %}

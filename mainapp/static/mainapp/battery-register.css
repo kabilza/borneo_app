@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+a.button:hover {
+    font-size: 25px;
+    align-self: center;
+    text-decoration: none;
+    color: white;
+}
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.card_menu_bar {
+    border-radius: 12px;
+    box-shadow: 8px 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.main_content1 {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 83.25vh;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+}
+
+.container-md {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 75vw;
+    padding-top: 85px;
+    background-color: blueviolet;
+    position: static;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+
+
+.menu_bar {
+    background-color: crimson;
+    display: flex;
+    justify-content: center;
+    height: 90px;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.menu_bar .menu_bar_column {
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    justify-content: space-between;
+}
+
+.menu_bar .menu_bar_column .row {
+    border: 10px;
+    border-radius: 6px;
+    background-color: brown;
+    padding: 10px;
+    margin: 10px;
+    width: 20rem;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+}
+
+.menu_bar .menu_bar_column a.button:hover .row {
+    border: 10px;
+    border-radius: 6px;
+    background-color: rgb(82, 168, 121);
+    padding: 10px;
+    margin: 10px;
+    width: 20rem;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+}
+
+.menu_bar .menu_bar_column .row h1 {
+    font-size: medium;
+    color: white;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+
+@media screen and (max-width: 1196px) {
+    .menu_bar .menu_bar_column .row {
+        border: 10px;
+        border-radius: 6px;
+        background-color: brown;
+        padding: 10px;
+        margin: 10px;
+        width: 180px;
+        height: 72px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu_bar .menu_bar_column {
+        display: flex;
+        flex-direction: row;
+        width: 70vw;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .menu_bar .menu_bar_column .row {
+        border: 10px;
+        border-radius: 6px;
+        background-color: brown;
+        padding: 10px;
+        margin: 10px;
+        width: 160px;
+        height: 72px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu_bar .menu_bar_column {
+        display: flex;
+        flex-direction: row;
+        width: 70vw;
+        justify-content: center;
+    }
+}
+
+.regis_menu {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100vh;
+    background-color: coral;
+}
+
+.regis_menu .regis_menu_item {
+    border: 10px;
+    border-radius: 6px;
+    background-color: rgb(199, 98, 4);
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.regis_menu .regis_menu_item i{
+    padding-top: 30px;
+    padding-left: 0px;
+    padding-right: 35px;
+    font-size: 35px;
+    color: white;
+}
+
+.regis_menu .regis_menu_item h1{
+    font-size: medium;
+    color: white;
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.regis_menu .user_profile i {
+    font-size: 70px;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.regis_menu .user_profile {
+    border: 10px;
+    border-radius: 6px;
+    background-color: rgb(168, 124, 82);
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.regis_menu .user_profile h1{
+    font-size: medium;
+    color: white;
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+@media screen and (max-height: 900px) {
+    .container-md {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 75vw;
+        padding-top: 155px;
+        background-color: rgb(30, 136, 15);
+        position: static;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .regis_menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background-color: coral;
+    }
+
+    .main_content2 {
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+        padding-bottom: 50px;
+    }
+
+    .menu_bar {
+        background-color: crimson;
+        display: flex;
+        justify-content: center;
+        height: 90px;
+        width: 100vw;
+    }
+}

@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = '/index'
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,8 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mainapp.apps.MainappConfig'
+    'mainapp.apps.MainappConfig',
+    'crispy_forms'
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

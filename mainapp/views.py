@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm
+from .forms import BatteryRegistrationForm
 
 @login_required
 def index(request):
@@ -28,3 +29,7 @@ def signup_view(request):
         login(request, user)
         return HttpResponseRedirect(reverse('index'))
     return render(request, 'registration/signup.html', context = {'form': form })
+
+def battery_registration(request):
+    form = BatteryRegistrationForm()
+    return render(request, 'mainapp/battery-register.html', context = {'form': form })
