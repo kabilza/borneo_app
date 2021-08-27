@@ -26,13 +26,15 @@
                         <br>ยินดีต้อนรับ คุณ {{ user.get_short_name }}
                         <br>Welcome, user {{ user.get_short_name }} </h1>
                 </div>
-    
+
+                <a class='button' href="{% url 'register-battery' %}">
                 <div class="regis_menu_item card_menu_bar">
                     <i class='bx bxs-plus-circle'></i>
                     <h1>
                         <br>ลงทะเบียนแบตเตอรี่
                         <br>Register your battery!</h1>
                 </div>
+                </a>    
             </div>
             <div class="side_content">
                 <h1>Test</h1>

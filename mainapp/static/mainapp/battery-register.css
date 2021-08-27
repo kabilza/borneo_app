@@ -15,37 +15,40 @@ a.button:hover {
 .card {
     border-radius: 12px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-    margin-bottom: 80px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #f2f2f2;
 }
 
 .main_content1 {
     display: flex;
     flex-direction: row;
     width: 100vw;
-    height: 83.25vh;
+    height: 95vh;
     background-color: rgb(255, 255, 255);
     justify-content: center;
 }
 
-.container-md {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    width: 75vw;
-    padding-top: 85px;
-    background-color: rgb(157, 152, 161);
-    position: static;
-}
 
 form .row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-self: center;
-    width: 500px;
+    width: 900px;
+    flex-wrap: wrap;
+    padding-top: 20px;
 }
+
+form .row1 {
+    flex-basis: 50%;
+    width: 200px;
+}
+
 
 
 .menu_bar {
@@ -79,12 +82,29 @@ form .row {
     justify-content: center;
 }
 
-.menu_bar .menu_bar_column a.button:hover .row {
+.rowbutton {
     border: 10px;
     border-radius: 6px;
     background-color: rgb(82, 168, 121);
     padding: 10px;
-    margin: 10px;
+    margin-top: 60px;
+    width: 20rem;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+}
+
+.rowbutton h1 {
+    font-size: medium;
+    color: white;
+    text-align: center;
+}
+
+
+.card-body a.button:hover .rowbutton {
+    border: 10px;
+    border-radius: 6px;
+    background-color: brown;
     width: 20rem;
     height: 72px;
     display: flex;
@@ -201,9 +221,15 @@ form .row {
 }
 
 .card-body {
+    padding: 20px 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    -webkit-touch-overflow:scroll;
+    overflow:auto;
+    width: 60vw;
 }
+
 
 .card_menu_bar {
     border-radius: 12px;
@@ -218,14 +244,30 @@ form .row {
         overflow-y: scroll;
         overflow-x: hidden;
         width: 75vw;
-        padding-top: 155px;
-        background-color: rgb(30, 136, 15);
+        background-color: #f2f2f2;
         position: static;
     }
 }
 
 
 @media screen and (max-width: 600px) {
+    form .row {
+        padding-top: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+        width: 900px;
+        flex-wrap: wrap;
+        /* overflow: auto; */
+    }
+
+    form .row1 {
+        width: 300px;
+        height: 200px;
+    }
+
     .regis_menu {
         display: flex;
         flex-direction: column;
@@ -251,6 +293,60 @@ form .row {
 
     .card-body {
         padding-top: 50px;
+        display: flex;
+        justify-content: center;
+        box-sizing: content-box;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1136px) {
+    form .row {
+        padding-top: 5git00px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+        width: 900px;
+        flex-wrap: wrap;
+        /* overflow: auto; */
+    }
+    
+    form .row1 {
+        width: 500px;
+        height: 200px;
+    }
+
+    .card {
+        border-radius: 12px;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+        margin-bottom: 50px;
+        margin-top: 50px;
+        width: 80vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: #f2f2f2;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        -webkit-touch-overflow:scroll;
+        width: 60vw;
+        overflow: auto;
+    }
+
+    .rowbutton {
+        border: 10px;
+        border-radius: 6px;
+        background-color: rgb(82, 168, 121);
+        padding: 10px;
+        margin-top: 60px;
+        width: 20rem;
+        height: 72px;
         display: flex;
         justify-content: center;
     }
