@@ -1,0 +1,18 @@
+@media screen and (max-height: 400px){
+    .navbar-brand {
+        width:150px;
+        font-size: 24px;
+    }
+
+    .navbar-brand img {
+        height: 50px;
+        /* put value of image height as your need */
+        float: left;
+        margin-right: 7px;
+    }
+    
+    nav {
+        background-color: black;
+    }
+    
+}
