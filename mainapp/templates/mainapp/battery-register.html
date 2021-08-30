@@ -22,7 +22,7 @@
 {% load static %}
     <link rel="stylesheet" href="{% static 'mainapp/battery-register.css' %}">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> 
-
+    <script src="{% static 'mainapp/js/register-battery.js' %}"></script>
     <div class="main_content1" style='background-image: 
         linear-gradient(
             rgba(70, 66, 66, 0.45), 
@@ -32,7 +32,8 @@
         <div class="card">
             <div class="card-body">
                 <div class="container-sm">
-                    <form action="" method="POST">
+                    <form id = "form-id" action="{% url 'register-battery'%}" method="POST">
+                        {% csrf_token %}
                         <div class="row">
                             <div class="row1">
                                 <div class="col-9">
@@ -68,14 +69,15 @@
                                     {{ form.shop_phonenumber|as_crispy_field }}
                                 </div>
                             </div>
+                            <a class='button' type='submit' onclick="document.forms['form-id'].submit();">
+                                <div class="rowbutton card">
+                                    <h1><i class='bx bx-skip-next-circle'></i>
+                                    <br>เรียบร้อย และ ไปหน้าข้อมูลส่วนตัว
+                                    <br>Next: Profile Form</h1>
+                                </div>
+                            </a>
                     </form>
-                    <a class='button' href="{% url 'warranty_con' %}">
-                        <div class="rowbutton card">
-                            <h1><i class='bx bx-skip-next-circle'></i>
-                            <br>เรียบร้อย และ ไปหน้าข้อมูลส่วนตัว
-                            <br>Next: Profile Form</h1>
-                        </div>
-                    </a>
+                    
                 </div>
                 
             </div>

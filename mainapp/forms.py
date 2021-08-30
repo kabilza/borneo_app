@@ -11,3 +11,8 @@ class BatteryRegistrationForm(ModelForm):
         model = BatteryWarranty
         exclude = ['profile']
         # widgets = { 'barcode': Textarea(attrs={'rows': 10})}
+
+class ProfileForm(ModelForm):
+    class Meta:
+        model = Profile
+        exclude = ['user']

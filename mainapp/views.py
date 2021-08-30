@@ -4,7 +4,8 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm
-from .forms import BatteryRegistrationForm
+from .forms import BatteryRegistrationForm, ProfileForm
+from .models import Profile
 
 @login_required
 def index(request):
@@ -36,5 +37,25 @@ def signup_view(request):
         return render(request, 'registration/signup.html', context = {'form': form })
 
 def battery_registration(request):
-    form = BatteryRegistrationForm()
-    return render(request, 'mainapp/battery-register.html', context = {'form': form })
+    if request.method == 'POST':
+        form = BatteryRegistrationForm(request.POST)
+        if form.is_valid():
+            print("form is valid")
+            obj = form.save(commit=False)
+            try:
+                profile1 = request.user.profile
+                obj.profile = profile1
+                obj.save()
+                print(request.user.profile)
+                return HttpResponseRedirect(reverse('index'), {"alert": True})
+            except Profile.DoesNotExist:
+                profile1 = Profile.objects.create(user=request.user)
+                obj.profile = profile1
+                obj.save()
+                print(request.user.profile)
+                return HttpResponseRedirect(reverse('index'), {"alert": True})
+        else:
+            return render(request, 'mainapp/battery-register.html', context = {'form': form })
+    else:
+        form = BatteryRegistrationForm()
+        return render(request, 'mainapp/battery-register.html', context = {'form': form })

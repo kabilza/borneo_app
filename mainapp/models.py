@@ -28,6 +28,10 @@ class Profile(models.Model):
     def get_number(self):
         return self.phone_num
 
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)        
+
 class BatteryWarranty(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
     barcode = models.CharField('Barcode', default="NOT SET", max_length=13)

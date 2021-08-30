@@ -16,6 +16,14 @@
 {% load static %}
     <link rel="stylesheet" href="{% static 'mainapp/index.css' %}">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> 
+    <script type="text/javascript">
+        $(function(){
+          {% if alert %}
+             //whatever conditions and js code
+             alert('Form created successfully!');
+          {% endif %}
+        });
+    </script>
 
     <div class="main_content1">
         <div class="main_content2">
@@ -33,6 +41,14 @@
                     <h1>
                         <br>ลงทะเบียนแบตเตอรี่
                         <br>Register your battery!</h1>
+                </div>
+                </a>    
+                <a class='button' href="{% url 'register-battery' %}">
+                    <div class="regis_menu_item card_menu_bar">
+                        <i class='bx bxs-user-circle'></i>
+                        <h1>
+                            <br>แก้ไขโปรไฟล
+                            <br>Edit your profile!</h1>
                 </div>
                 </a>    
             </div>
