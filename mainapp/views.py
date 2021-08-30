@@ -20,15 +20,20 @@ def warranty_con(request):
     return render(request, 'mainapp/warrantycondition.html')
 
 def signup_view(request):
-    form = UserCreationForm(request.POST)
-    if form.is_valid():
-        form.save()
-        username = form.cleaned_data.get('username')
-        password = form.cleaned_data.get('password1')
-        user = authenticate(username=username, password=password)
-        login(request, user)
-        return HttpResponseRedirect(reverse('index'))
-    return render(request, 'registration/signup.html', context = {'form': form })
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return HttpResponseRedirect(reverse('index'))
+        else:
+            return render(request, 'registration/signup.html', context = {'form': form })
+    else:
+        form = UserCreationForm()
+        return render(request, 'registration/signup.html', context = {'form': form })
 
 def battery_registration(request):
     form = BatteryRegistrationForm()

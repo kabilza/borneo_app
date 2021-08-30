@@ -42,11 +42,11 @@
                     {% if field.help_text %}
                       <small>{{ field.help_text }}</small>
                     {% endif %}
-                    <div class="alert alert-danger" role="alert" style="padding-bottom: 0px;">
-                        {% for error in field.errors %}
-                            <p style= "color: red; font-weight: 300;" >{{ error }}</p>
-                        {% endfor %}
+                    {% for error in field.errors %}
+                    <div class="alert alert-danger" role="alert" style="padding-bottom: 0px;"></div>
+                        <p style= "color: red; font-weight: 300;" >{{ error }}</p>
                     </div>
+                    {% endfor %}
                   </p>
                 {% endfor %}
                 <div class="button_row" style="display: flex; flex-direction: row; justify-content: center;">
