@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+a:hover {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
 
 .menu_bar_column a.button:hover {
     font-size: 25px;
