@@ -16,14 +16,14 @@
 {% load static %}
     <link rel="stylesheet" href="{% static 'mainapp/index.css' %}">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> 
+    {% if messages %}
     <script type="text/javascript">
         $(function(){
-          {% if alert %}
              //whatever conditions and js code
-             alert('Form created successfully!');
-          {% endif %}
+             alert('Form successfully created!');
         });
     </script>
+    {% endif %}
 
     <div class="main_content1">
         <div class="main_content2">
@@ -43,7 +43,7 @@
                         <br>Register your battery!</h1>
                 </div>
                 </a>    
-                <a class='button' href="{% url 'register-battery' %}">
+                <a class='button' href="{% url 'profile-edit' %}">
                     <div class="regis_menu_item card_menu_bar">
                         <i class='bx bxs-user-circle'></i>
                         <h1>
@@ -53,6 +53,13 @@
                 </a>    
             </div>
             <div class="side_content">
+                <!-- {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                    {% endfor %}
+                </ul>
+                {% endif %} -->
                 <h1>Test</h1>
                 <ol>
                     <li>

@@ -301,7 +301,7 @@ form .row1 {
 
 @media screen and (min-width: 600px) and (max-width: 1136px) {
     form .row {
-        padding-top: 500px;
+        padding-top: 5git00px;
         display: flex;
         flex-direction: column;
         justify-content: center;

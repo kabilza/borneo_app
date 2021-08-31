@@ -23,15 +23,6 @@
     <link rel="stylesheet" href="{% static 'mainapp/battery-register.css' %}">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> 
     <script src="{% static 'mainapp/js/register-battery.js' %}"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css"> 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-    $( function() {
-        $( "#datepicker" ).datepicker();
-    } );
-    </script>
     <div class="main_content1" style='background-image: 
         linear-gradient(
             rgba(70, 66, 66, 0.45), 
@@ -46,47 +37,46 @@
                         <div class="row">
                             <div class="row1">
                                 <div class="col-9">
-                                    {{ form.barcode|as_crispy_field }}
+                                    {{ form.brief_info|as_crispy_field }}
                                 </div>
                                 <div class="col-9">
-                                    {{ form.brand|as_crispy_field }}
+                                    {{ form.phone_num|as_crispy_field }}
                                 </div>
                                 <div class="col-9">
-                                    {{ form.battery_type|as_crispy_field }}
+                                    {{ form.twitter|as_crispy_field }}
                                 </div>
                                 <div class="col-9">
-                                    {{ form.battery_model|as_crispy_field }}
+                                    {{ form.facebook|as_crispy_field }}
                                 </div>
                                 <div class="col-9">
-                                    {{ form.warranty_period|as_crispy_field }}
+                                    {{ form.line|as_crispy_field }}
                                 </div>
                             </div>
                             <div class="row1">
                                 <div class="col-9">
-                                    <p>Date Installed: <input type="text" id="datepicker" name="date-time"></p>
+                                    {{ form.age|as_crispy_field }}
                                 </div>
                                 <div class="col-9">
-                                    {{ form.shop_name|as_crispy_field }}
+                                    {{ form.home_address|as_crispy_field }}
                                 </div>
                                 <div class="col-9">
-                                    {{ form.shop_province|as_crispy_field }}
+                                    {{ form.home_postalcode|as_crispy_field }}
                                 </div>
                                 <div class="col-9">
-                                    {{ form.shop_district|as_crispy_field }}
+                                    {{ form.home_province|as_crispy_field }}
                                 </div>
                                 <div class="col-9">
-                                    {{ form.shop_phonenumber|as_crispy_field }}
+                                    {{ form.home_district|as_crispy_field }}
                                 </div>
                             </div>
                             <a class='button' type='submit' onclick="document.forms['form-id'].submit();">
                                 <div class="rowbutton card">
                                     <h1><i class='bx bx-skip-next-circle'></i>
-                                    <br>เรียบร้อย
-                                    <br>Done and return to Index</h1>
+                                    <br>เรียบร้อย และ ไปหน้าข้อมูลส่วนตัว
+                                    <br>Next: Profile Form</h1>
                                 </div>
                             </a>
                     </form>
-                    
                 </div>
                 
             </div>

@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm
 from .forms import BatteryRegistrationForm, ProfileForm
 from .models import Profile
+from django.contrib import messages
 
 @login_required
 def index(request):
@@ -38,24 +39,36 @@ def signup_view(request):
 
 def battery_registration(request):
     if request.method == 'POST':
-        form = BatteryRegistrationForm(request.POST)
+        updated_request = request.POST.copy()
+        updated_request.update({'date_installed': request.POST['date-time']})
+        form = BatteryRegistrationForm(updated_request)
+        print(request.POST['date-time'])
         if form.is_valid():
             print("form is valid")
             obj = form.save(commit=False)
             try:
                 profile1 = request.user.profile
                 obj.profile = profile1
+                date_installed = request.POST['date-time']
+                print(date_installed)
+                obj.date_installed = date_installed
                 obj.save()
                 print(request.user.profile)
-                return HttpResponseRedirect(reverse('index'), {"alert": True})
+                messages.success(request, 'Form submission successful')
+                return HttpResponseRedirect(reverse('index'))
             except Profile.DoesNotExist:
                 profile1 = Profile.objects.create(user=request.user)
                 obj.profile = profile1
                 obj.save()
                 print(request.user.profile)
-                return HttpResponseRedirect(reverse('index'), {"alert": True})
+                return HttpResponseRedirect(reverse('index'))
         else:
+            print("form is not valid")
             return render(request, 'mainapp/battery-register.html', context = {'form': form })
     else:
         form = BatteryRegistrationForm()
         return render(request, 'mainapp/battery-register.html', context = {'form': form })
+
+def profile_edit(request):
+    form = ProfileForm()
+    return render(request, 'mainapp/profile-edit.html', context={'form':form})
