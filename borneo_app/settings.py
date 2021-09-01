@@ -30,6 +30,8 @@ ALLOWED_HOSTS = ['192.168.1.118', '127.0.0.1']
 
 LOGIN_REDIRECT_URL = '/index'
 
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
+
 
 # Application definition
 

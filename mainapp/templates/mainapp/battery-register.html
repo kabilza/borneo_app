@@ -29,7 +29,17 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
     $( function() {
-        $( "#datepicker" ).datepicker();
+        // $( "#datepicker" ).datepicker({
+        //     dateFormat: 'yy-mm-dd'
+        // });
+
+        $("#datepicker").datepicker({dateFormat: 'yy-mm-dd'});
+        // $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
+        //     var minValue = $(this).val();
+        //     minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
+        //     minValue.setDate(minValue.getDate()+1);
+        //     $("#to").datepicker( "option", "minDate", minValue );
+        // })
     } );
     </script>
     <div class="main_content1" style='background-image: 
@@ -78,6 +88,13 @@
                                     {{ form.shop_phonenumber|as_crispy_field }}
                                 </div>
                             </div>
+                            {% if form.errors %}
+                                <ul>
+                                    {% for key,value in form.errors.items %} 
+                                    <li>{{ key|escape }} : {{ value|escape }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                             <a class='button' type='submit' onclick="document.forms['form-id'].submit();">
                                 <div class="rowbutton card">
                                     <h1><i class='bx bx-skip-next-circle'></i>
