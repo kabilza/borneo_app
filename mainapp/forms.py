@@ -13,4 +13,9 @@ class BatteryRegistrationForm(ModelForm):
 class ProfileForm(ModelForm):
     class Meta:
         model = Profile
-        exclude = ['user']
+        exclude = ['user', 'user_id']
+
+class UserForm(ModelForm):
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name"]

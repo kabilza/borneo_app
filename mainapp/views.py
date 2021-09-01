@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm
-from .forms import BatteryRegistrationForm, ProfileForm
+from .forms import BatteryRegistrationForm, ProfileForm, UserForm
 from .models import Profile
 from django.contrib import messages
 
@@ -75,5 +75,24 @@ def battery_registration(request):
         return render(request, 'mainapp/battery-register.html', context = {'form': form })
 
 def profile_edit(request):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST)
+        form2 = UserForm(request.POST)
+        if form.is_valid():
+            userform = form2.save()
+            print("form is valid")
+            profile = form.save(commit=False)
+            profile.user = userform
+            profile.save()
+            print('profile is saved')
+            messages.success(request, 'Form submission successful')
+            return HttpResponseRedirect(reverse('index'))
+        else:
+            form = ProfileForm()
+            form2 = UserForm()
+            print("form is not valid")
+            return render(request, 'mainapp/profile-edit.html', context={'form':form, 'form2':form2})
+
     form = ProfileForm()
-    return render(request, 'mainapp/profile-edit.html', context={'form':form})
+    form2 = UserForm()
+    return render(request, 'mainapp/profile-edit.html', context={'form':form, 'form2':form2})

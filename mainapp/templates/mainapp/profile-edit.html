@@ -32,7 +32,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="container-sm">
-                    <form id = "form-id" action="{% url 'register-battery'%}" method="POST">
+                    <form id = "form-id" action="{% url 'profile-edit'%}" method="POST">
                         {% csrf_token %}
                         <div class="row">
                             <div class="row1">
@@ -43,10 +43,10 @@
                                     {{ form.phone_num|as_crispy_field }}
                                 </div>
                                 <div class="col-9">
-                                    {{ form.twitter|as_crispy_field }}
+                                    {{ form2.first_name|as_crispy_field }}
                                 </div>
                                 <div class="col-9">
-                                    {{ form.facebook|as_crispy_field }}
+                                    {{ form2.last_name|as_crispy_field }}
                                 </div>
                                 <div class="col-9">
                                     {{ form.line|as_crispy_field }}
@@ -69,6 +69,13 @@
                                     {{ form.home_district|as_crispy_field }}
                                 </div>
                             </div>
+                            {% if form2.errors %}
+                                <ul>
+                                    {% for key,value in form2.errors.items %} 
+                                    <li>{{ key|escape }} : {{ value|escape }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                             <a class='button' type='submit' onclick="document.forms['form-id'].submit();">
                                 <div class="rowbutton card">
                                     <h1><i class='bx bx-skip-next-circle'></i>
