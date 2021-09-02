@@ -37,6 +37,7 @@ def signup_view(request):
         form = UserCreationForm()
         return render(request, 'registration/signup.html', context = {'form': form })
 
+@login_required
 def battery_registration(request):
     if request.method == 'POST':
         updated_request = request.POST.copy()
@@ -73,6 +74,7 @@ def battery_registration(request):
         form = BatteryRegistrationForm()
         return render(request, 'mainapp/battery-register.html', context = {'form': form })
 
+@login_required
 def profile_edit(request):
     if request.method == 'POST':
         form = ProfileForm(request.POST)
