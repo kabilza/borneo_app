@@ -48,15 +48,6 @@ def battery_registration(request):
             obj = form.save(commit=False)
             try:
                 profile1 = request.user.profile
-                obj.profile = profile1
-                date_installed = str(request.POST['date-time'])
-                print('form is cleaned but havent saved')
-                print(date_installed)
-                obj.date_installed = date_installed
-                obj.save()
-                print(request.user.profile)
-                messages.success(request, 'Form submission successful')
-                return HttpResponseRedirect(reverse('index'))
             except Profile.DoesNotExist:
                 profile1 = Profile.objects.create(user=request.user)
                 obj.profile = profile1
@@ -67,6 +58,14 @@ def battery_registration(request):
                 print(request.user.profile)
                 messages.success(request, 'Form submission successful')
                 return HttpResponseRedirect(reverse('index'))
+            obj.profile = profile1
+            date_installed = str(request.POST['date-time'])
+            print(date_installed)
+            obj.date_installed = date_installed
+            obj.save()
+            print(request.user.profile)
+            messages.success(request, 'Form submission successful')
+            return HttpResponseRedirect(reverse('index'))
         else:
             print("form is not valid")
             return render(request, 'mainapp/battery-register.html', context = {'form': form })
