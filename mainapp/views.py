@@ -78,22 +78,70 @@ def battery_registration(request):
 def profile_edit(request):
     if request.method == 'POST':
         form = ProfileForm(request.POST)
-        form2 = UserForm(request.POST)
         if form.is_valid():
-            userform = form2.save()
             print("form is valid")
-            profile = form.save(commit=False)
-            profile.user = userform
-            profile.save()
+            try:
+                profile1 = request.user.profile
+            except Profile.DoesNotExist:
+                brief_info = form.cleaned_data['brief_info']
+                phone_num = form.cleaned_data['phone_num']
+                twitter = form.cleaned_data['twitter']
+                facebook = form.cleaned_data['facebook']
+                line = form.cleaned_data['line']
+                age = form.cleaned_data['age']
+                home_address = form.cleaned_data['home_address']
+                home_postalcode = form.cleaned_data['home_postalcode']
+                home_province = form.cleaned_data['home_province']
+                home_district = form.cleaned_data['home_district']
+                profile1 = Profile.objects.create(user=request.user, brief_info=brief_info, phone_num=phone_num,
+                 twitter=twitter, facebook=facebook, line=line, age=age, home_address=home_address, home_postalcode=home_postalcode,
+                 home_district=home_district)
+                print('profile does not exist so is created')
+                profile1.save()
+                print('profile is saved')
+                messages.success(request, 'Form submission successful')
+                return HttpResponseRedirect(reverse('index'))
+
+            brief_info = form.cleaned_data['brief_info']
+            phone_num = form.cleaned_data['phone_num']
+            twitter = form.cleaned_data['twitter']
+            facebook = form.cleaned_data['facebook']
+            line = form.cleaned_data['line']
+            age = form.cleaned_data['age']
+            home_address = form.cleaned_data['home_address']
+            home_postalcode = form.cleaned_data['home_postalcode']
+            home_province = form.cleaned_data['home_province']
+            home_district = form.cleaned_data['home_district']
+            print(f"user is {request.user}")
+            profile1 = Profile.objects.update(brief_info=brief_info, phone_num=phone_num,
+                twitter=twitter, facebook=facebook, line=line, age=age, home_address=home_address, home_postalcode=home_postalcode,
+                home_district=home_district)
+            print('profile does exist so is created')
             print('profile is saved')
             messages.success(request, 'Form submission successful')
             return HttpResponseRedirect(reverse('index'))
         else:
             form = ProfileForm()
-            form2 = UserForm()
             print("form is not valid")
-            return render(request, 'mainapp/profile-edit.html', context={'form':form, 'form2':form2})
+            return render(request, 'mainapp/profile-edit.html', context={'form':form})
 
+    # try:
+    #     profile1 = request.user.profile
+    #     form = ProfileForm(initial=profile1)
+    #     return render(request, 'mainapp/profile-edit.html', context={'form':form})
+    # except Profile.DoesNotExist:
     form = ProfileForm()
-    form2 = UserForm()
-    return render(request, 'mainapp/profile-edit.html', context={'form':form, 'form2':form2})
+    return render(request, 'mainapp/profile-edit.html', context={'form':form})
+
+@login_required
+def username_edit(request):
+    if request.method == 'POST':
+        user_obj = request.user
+        user_obj.first_name = str(request.POST['first_name'])
+        user_obj.last_name = str(request.POST['last_name'])
+        user_obj.save()
+        print('user name is saved')
+        messages.success(request, 'Form submission successful')
+        return HttpResponseRedirect(reverse('index'))
+    form = UserForm()
+    return render(request, 'mainapp/username-edit.html', context={'form':form})
