@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block navmenu %}
+<li class="nav-item active">
+    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+  </li>
+    {% if user.is_authenticated %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    </li>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+    <link rel="stylesheet" href="{% static 'mainapp/index.css' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/battery-list.css' %}">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> 
+    {% if messages %}
+    <script type="text/javascript">
+        $(function(){
+             //whatever conditions and js code
+             alert('Form successfully created!');
+        });
+    </script>
+    {% endif %}
+
+    <div class="main_content1">
+        <div class="main_content2">
+            <div class="regis_menu">
+                <div class="user_profile card_menu_bar">
+                    <i class='bx bxs-user-circle' ></i>
+                    <h1>
+                        <br>ยินดีต้อนรับ คุณ {{ user.get_short_name }}
+                        <br>Welcome, user {{ user.get_short_name }} </h1>
+                </div>
+
+                <a class='button' href="{% url 'register-battery' %}">
+                <div class="regis_menu_item card_menu_bar">
+                    <i class='bx bxs-plus-circle'></i>
+                    <h1>
+                        <br>ลงทะเบียนแบตเตอรี่
+                        <br>Register your battery!</h1>
+                </div>
+                </a>    
+                <a class='button' href="{% url 'profile-edit' %}">
+                    <div class="regis_menu_item card_menu_bar">
+                        <i class='bx bxs-user-circle'></i>
+                        <h1>
+                            <br>แก้ไขโปรไฟล
+                            <br>Edit your profile!</h1>
+                </div>
+                </a>
+                <a class='button' href="{% url 'battery-list' %}">
+                    <div class="regis_menu_item card_menu_bar">
+                        <i class='bx bxs-user-circle'></i>
+                        <h1>
+                            <br>แสดงรายการที่ลงทะเบียนแล้ว
+                            <br>View previous registered list</h1>
+                </div>
+                </a>       
+            </div>
+            <div class="side_content">
+
+                <h1>List of previous registered battery</h1>
+
+                <table id="customers">
+                    <tr>
+                      <th>Barcode</th>
+                      <th>Brand</th>
+                      <th>Battery Type</th>
+                      <th>Battery Model</th>
+                      <th>Warranty Period</th>
+                      <th>Date Installed</th>
+                      <th>Shop Name</th>
+                      <th>Shop Province</th>
+                      <th>Shop District</th>
+                      <th>Shop Phone Number</th>
+                    </tr>
+                    {% for battery in page_obj %}
+                    {% if battery.profile == user.profile %}
+                    <tr>
+                        <td>{{ battery.barcode|upper }}</td>
+                        <td>{{ battery.brand|upper }}</td>
+                        <td>{{ battery.battery_type|upper }}</td>
+                        <td>{{ battery.battery_model|upper }}</td>
+                        <td>{{ battery.warranty_period|upper }}</td>
+                        <td>{{ battery.date_installed|upper }}</td>
+                        <td>{{ battery.shop_name|upper }}</td>
+                        <td>{{ battery.shop_province|upper }}</td>
+                        <td>{{ battery.shop_district|upper }}</td>
+                        <td>{{ battery.shop_phonenumber|upper }}</td>
+                      </tr>
+                    {% endif %}
+                    {% endfor %}
+                  </table>
+
+                  <div class="pagination">
+                    <span class="step-links">
+                        {% if page_obj.has_previous %}
+                            <a href="?page=1">&laquo; first</a>
+                            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                        {% endif %}
+
+                        <span class="current">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                        </span>
+
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}">next</a>
+                            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+            <div class="menu_bar">
+                <div class="menu_bar_column">
+                    <a class='button' href="{% url 'warranty_con' %}">
+                        <div class="row card">
+                            <h1><i class='bx bx-question-mark'></i>
+                            <br>วิธีการใช้งาน
+                            <br>How to use</h1>
+                        </div>
+                    </a>
+                    <a class='button' href="{% url 'warranty_con' %}">
+                        <div class="row card">
+                            <h1><i class='bx bx-check-square' ></i>
+                            <br>เงื่อนไขการรับประกัน
+                            <br>Warranty Conditions</h1>
+                        </div>
+                    </a>
+                    <a class='button' href="{% url 'warranty_con' %}">
+                    <div class="row card">
+                        <h1><i class='bx bxs-location-plus' ></i>
+                        <br>จุดบริการ
+                        <br>Service Locations</h1>
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        
+    </div>
+
+    
+
+{% endblock %}

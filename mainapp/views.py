@@ -5,8 +5,9 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm
 from .forms import BatteryRegistrationForm, ProfileForm, UserForm
-from .models import Profile
+from .models import Profile, BatteryWarranty
 from django.contrib import messages
+from django.core.paginator import Paginator
 
 @login_required
 def index(request):
@@ -145,3 +146,12 @@ def username_edit(request):
         return HttpResponseRedirect(reverse('index'))
     form = UserForm()
     return render(request, 'mainapp/username-edit.html', context={'form':form})
+
+@login_required
+def battery_list(request):
+    battery_list = BatteryWarranty.objects.all()
+    paginator = Paginator(battery_list, 25)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'mainapp/battery-list.html', context={'page_obj': page_obj})
