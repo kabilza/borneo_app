@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
@@ -155,3 +155,11 @@ def battery_list(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'mainapp/battery-list.html', context={'page_obj': page_obj})
+
+@login_required
+def battery_remove(request, id):
+    print('delete')
+    battery = get_object_or_404(BatteryWarranty, id=id)
+    battery.delete()
+    messages.success(request, 'Operation successful')
+    return HttpResponseRedirect(reverse('index'))
