@@ -149,7 +149,7 @@ def username_edit(request):
 
 @login_required
 def battery_list(request):
-    battery_list = BatteryWarranty.objects.all()
+    battery_list = BatteryWarranty.objects.filter(profile__user=request.user)
     paginator = Paginator(battery_list, 25)
 
     page_number = request.GET.get('page')

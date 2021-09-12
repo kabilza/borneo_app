@@ -20,7 +20,6 @@
     {% if messages %}
     <script type="text/javascript">
         $(function(){
-             //whatever conditions and js code
              alert('Form successfully created!');
         });
     </script>
@@ -65,6 +64,8 @@
 
                 <h1>List of previous registered battery</h1>
 
+                <p> </p>
+
                 <table id="customers">
                     <tr>
                       <th>Barcode</th>
@@ -95,6 +96,8 @@
                     {% endif %}
                     {% endfor %}
                   </table>
+
+                  <p> </p>
 
                   <div class="pagination">
                     <span class="step-links">

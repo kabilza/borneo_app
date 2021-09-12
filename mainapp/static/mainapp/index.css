@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+.side_content {
+    padding: 20px;
+}
+
 a:hover {
     color: #007bff;
     text-decoration: none;
