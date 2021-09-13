@@ -79,7 +79,6 @@
                       <th>Shop District</th>
                       <th>Shop Phone Number</th>
                       <th>Delete</th>
-                      <th>Edit</th>
                     </tr>
                     {% for battery in page_obj %}
                     {% if battery.profile == user.profile %}
@@ -96,9 +95,6 @@
                         <td>{{ battery.shop_phonenumber|upper }}</td>
                         <td>
                             <a href="{% url 'battery-remove' battery.id%}" class="btn btn-danger" role="button">Delete</a>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-secondary">Edit</button>
                         </td>
                       </tr>
                     {% endif %}

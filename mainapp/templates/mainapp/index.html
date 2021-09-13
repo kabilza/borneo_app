@@ -24,6 +24,35 @@
         });
     </script>
     {% endif %}
+    <script type="text/javascript">
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
 
     <div class="main_content1">
         <div class="main_content2">
@@ -61,50 +90,30 @@
                 </a>        
             </div>
             <div class="side_content">
-                <!-- {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                    <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
-                    {% endfor %}
-                </ul>
-                {% endif %} -->
-                <h1>Test</h1>
-                <ol>
-                    <li>
-                        <b>แบตเตอรี่อมารอน</b> รับประกันคุณภาพสินค้า เฉพาะแบตเตอรี่ที่เสียหาย อันเกิดจากความบกพร่องของโรงงานผู้ผลิต ในช่วงเวลารับประกัน โดยนับจากวันที่ติดตั้ง สำหรับรถยนต์ทั่วไป รับประกัน 1 – 2 ปี หรือ สำหรับรถใช้งานเพื่อการพาณิชย์ รับประกัน 6 เดือน
-                        <ol>
-                            <li>ในการเคลมสินค้ากับผู้แทนจำหน่ายแบตเตอรี่อมารอน ต้องนำบัตรประกันที่มีตราประทับของร้านค้า หรือ ตัวแทนจำหน่ายมาแสดง</li>
-                            <li>บัตรรับประกันสินค้าสูญหาย บริษัทจะไม่ออกให้ใหม่และการรับประกัน ไม่สามารถโอนเปลี่ยนมือได้</li>
-                        </ol>
-                    </li>
-                    <li>
-                        <b>
-                            ข้อยกเว้นการรับประกัน</b>
-                            <ol>
-                                <li>เลขบาร์โค้ดของแบตเตอรี่ ถูกทำลายเลือนหาย, ถูกเปลี่ยนแปลงแก้ไข, ถูกลบ หรือถูกดึงออก</li>
-                                <li>ความเสียหาย อันเกิดจากการไม่ปฏิบัติตามคำแนะนำในการใช้, การประมาทเลินเล่อ, เกิดอุบัติเหตุแก่สินค้า เช่น สินค้าตกกระแทกจนเสียหาย, ขาดการบำรุงรักษา, เกิดอุบัติเหตุแก่สินค้า ซึ่งเกิดจากการกระทำของผู้ซื้อ, ไฟไหม้, น้ำท่วม และภัยธรรมชาติอื่นๆ</li>
-                                <li>แบตเตอรี่ถูกติดตั้ง หรือดูแลรักษาไม่ตรงกับคำแนะนำจากผู้ผลิต</li>
-                                <li>แบตเตอรี่ถูกเก็บไว้ในสต็อกร้านค้า เกินกว่า 3 เดือน</li>
-                                <li>แบตเตอรี่ถูกดัดแปลงสภาพ ผิดไปจากข้อกำหนดโรงงาน</li>
-                                <li>เมื่อบัตรรับประกันไม่สมบรูณ์, ฉีดขาด, ถูกทำลาย หรือถูกแก้ไขเปลี่ยนแปลง</li>
-                            </ol>
-                </li>
-                    <li>
-                <dt> การรับประกันไม่รวมถึง</dt>
-                <ol>
-                    <li>แบตเตอรี่เสียหาย เนื่องมาจากอุปกรณ์ส่วนอื่นของ รถยนต์ ทำงานบกพร่อง</li>
-                    <li>ต้นทุนในการนำแบตเตอรี่ กลับมาเปลี่ยนหรือคืนที่ร้านตัวแทนจำหน่าย</li>
-                    <li>ค่าแรงในการถอด หรือเปลี่ยนแบตเตอรี่</li>
-                    <li>ความเสียหายอื่นๆ ที่ตามมา</li>
-                </ol>
-                </li>
-                    <li><b>บัตรรับประกันจะไม่มีผล ถ้าไม่ระบุข้อมูลให้ถูกต้องและครบถ้วน</b>
-                    <ol>
-                        <li>หากเกิดปัญหากับแบตเตอรี่สามารถติดต่อได้ที่ตัวแทนจำหน่ายที่ติดตั้งหรือซื้อแบตเตอรี่
-                        </li>
-                    </ol>
-                    </li>
-                </ol>
+                <h1>Welcome to Borneo Battery Registeration Website</h1>
+                <p>Please chose the menu from below to perform operations</p>
+                <p>กรุณาเลือกเมนูเพื่อทำการลงทะเบียน</p>
+                <div class="container">
+                    <div class="mySlides" style="display: block;">
+                      <div class="numbertext">1 / 3</div>
+                      <img src="{% static 'mainapp/images/A001.jpg' %}" style="width:100%">
+                    </div>
+                  
+                    <div class="mySlides">
+                      <div class="numbertext">2 / 3</div>
+                      <img src="{% static 'mainapp/images/A002.jpg' %}" style="width:100%">
+                    </div>
+                  
+                    <div class="mySlides">
+                      <div class="numbertext">3 / 3</div>
+                      <img src="{% static 'mainapp/images/A003.jpg' %}" style="width:100%">
+                    </div>
+                      
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                  
+                  
+                  </div>
             </div>
             <div class="menu_bar">
                 <div class="menu_bar_column">
@@ -122,7 +131,7 @@
                             <br>Warranty Conditions</h1>
                         </div>
                     </a>
-                    <a class='button' href="{% url 'warranty_con' %}">
+                    <a class='button' href="https://warranty.borneothai.com/amaronshop/">
                     <div class="row card">
                         <h1><i class='bx bxs-location-plus' ></i>
                         <br>จุดบริการ
