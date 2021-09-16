@@ -13,6 +13,10 @@ from django.core.paginator import Paginator
 def index(request):
     return render(request, 'mainapp/index.html')
 
+@login_required
+def tutorial(request):
+    return render(request, 'mainapp/tutorial.html')
+
 def welcome(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect(reverse('index'))
