@@ -15,15 +15,8 @@
 
 {% load static %}
     <link rel="stylesheet" href="{% static 'mainapp/index.css' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/battery-list.css' %}">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> 
-    {% if messages %}
-    <script type="text/javascript">
-        $(function(){
-             //whatever conditions and js code
-             alert('Operation Successfully Operated! เรียบร้อยแล้ว!');
-        });
-    </script>
-    {% endif %}
     <script type="text/javascript">
         var slideIndex = 1;
         showSlides(slideIndex);
@@ -60,8 +53,8 @@
                 <div class="user_profile card_menu_bar">
                     <i class='bx bxs-user-circle' ></i>
                     <h1>
-                        <br>ยินดีต้อนรับ คุณ {{ user.get_full_name }}
-                        <br>Welcome, user {{ user.get_full_name }} </h1>
+                        <br>ยินดีต้อนรับ คุณ {{ user.get_short_name }}
+                        <br>Welcome, user {{ user.get_short_name }} </h1>
                 </div>
 
                 <a class='button' href="{% url 'register-battery' %}">
@@ -87,31 +80,25 @@
                             <br>แสดงรายการที่ลงทะเบียนแล้ว
                             <br>View previous registered list</h1>
                 </div>
-                </a>        
+                </a>       
             </div>
             <div class="side_content">
-                <h1>Welcome to Borneo Battery Registeration Website</h1>
-                <p>Please chose the menu from below to perform operations</p>
-                <p>กรุณาเลือกเมนูเพื่อทำการลงทะเบียน</p>
+                <h1>How to use!</h1>
+                <p>วิธีใช้งาน</p>
+
                 <div class="container">
                     <div class="mySlides" style="display: block;">
-                      <div class="numbertext">1 / 3</div>
-                      <img src="{% static 'mainapp/images/A001.jpg' %}" style="width:100%">
+                      <div class="numbertext">1 / 2</div>
+                      <img src="{% static 'mainapp/images/tutorials/tutorial1.png' %}" style="width:100%">
                     </div>
                   
                     <div class="mySlides">
-                      <div class="numbertext">2 / 3</div>
-                      <img src="{% static 'mainapp/images/A002.jpg' %}" style="width:100%">
-                    </div>
-                  
-                    <div class="mySlides">
-                      <div class="numbertext">3 / 3</div>
-                      <img src="{% static 'mainapp/images/A003.jpg' %}" style="width:100%">
+                      <div class="numbertext">2 / 2</div>
+                      <img src="{% static 'mainapp/images/tutorials/tutorial2.png' %}" style="width:100%">
                     </div>
                       
                     <a class="prev" onclick="plusSlides(-1)">❮</a>
                     <a class="next" onclick="plusSlides(1)">❯</a>
-                  
                   
                   </div>
             </div>
@@ -131,7 +118,7 @@
                             <br>Warranty Conditions</h1>
                         </div>
                     </a>
-                    <a class='button' href="https://warranty.borneothai.com/amaronshop/">
+                    <a class='button' href="{% url 'warranty_con' %}">
                     <div class="row card">
                         <h1><i class='bx bxs-location-plus' ></i>
                         <br>จุดบริการ

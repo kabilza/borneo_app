@@ -17,13 +17,6 @@
     <link rel="stylesheet" href="{% static 'mainapp/index.css' %}">
     <link rel="stylesheet" href="{% static 'mainapp/battery-list.css' %}">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> 
-    {% if messages %}
-    <script type="text/javascript">
-        $(function(){
-             alert('Form successfully created!');
-        });
-    </script>
-    {% endif %}
 
     <div class="main_content1">
         <div class="main_content2">
@@ -123,7 +116,7 @@
             </div>
             <div class="menu_bar">
                 <div class="menu_bar_column">
-                    <a class='button' href="{% url 'warranty_con' %}">
+                    <a class='button' href="{% url 'tutorial' %}">
                         <div class="row card">
                             <h1><i class='bx bx-question-mark'></i>
                             <br>วิธีการใช้งาน
@@ -137,7 +130,7 @@
                             <br>Warranty Conditions</h1>
                         </div>
                     </a>
-                    <a class='button' href="{% url 'warranty_con' %}">
+                    <a class='button' href="https://warranty.borneothai.com/amaronshop/">
                     <div class="row card">
                         <h1><i class='bx bxs-location-plus' ></i>
                         <br>จุดบริการ
