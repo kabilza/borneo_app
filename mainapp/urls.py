@@ -15,4 +15,5 @@ urlpatterns = [
     path('register-battery', views.battery_registration, name='register-battery'),
     path('', views.welcome, name='welcome'),
     path('index/warranty', views.warranty_con, name='warranty_con'),
+    path('social-auth/', include('social_django.urls', namespace="social"))
 ]

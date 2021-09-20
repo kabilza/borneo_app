@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainapp.apps.MainappConfig',
-    'crispy_forms'
+    'crispy_forms',
+    'social_django',
+    'sslserver'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -136,3 +138,11 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGOUT_REDIRECT_URL = '/'
+
+AUTHENTICATION_BACKENDS = [
+  'social_core.backends.facebook.FacebookOAuth2',
+  'django.contrib.auth.backends.ModelBackend'
+]
+
+SOCIAL_AUTH_FACEBOOK_KEY = '314987827093960' # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'a85e8d01e62ffe855aa55d29fa89210c' # App Secret
