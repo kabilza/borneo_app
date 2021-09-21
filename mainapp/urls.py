@@ -7,6 +7,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('signup', views.signup_view, name='signup'),
     path('index', views.index, name='index'),
+    path('index/profile', views.profile_view, name='profile'),
     path('index/tutorial', views.tutorial, name='tutorial'),
     path('index/battery-list', views.battery_list, name='battery-list'),
     path('index/battery-remove/<int:id>', views.battery_remove, name='battery-remove'),

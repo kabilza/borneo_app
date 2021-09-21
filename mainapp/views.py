@@ -14,6 +14,11 @@ def index(request):
     return render(request, 'mainapp/index.html')
 
 @login_required
+def profile_view(request):
+    user = request.user
+    return render(request, 'mainapp/profile.html', context= {'user' : user })
+
+@login_required
 def tutorial(request):
     return render(request, 'mainapp/tutorial.html')
 
